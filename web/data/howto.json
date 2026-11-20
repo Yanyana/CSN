@@ -1,0 +1,169 @@
+{
+ "sheet": "HowTo",
+ "slug": "howto",
+ "intro": "Halo Players of Crystal Saga: Nova! Dokumen ini membantu memakai 35 sheet sistem.",
+ "sections": [
+  {
+   "group": "Kalkulator",
+   "items": [
+    [
+     "Calcs",
+     "POI, spending points dan Honor."
+    ],
+    [
+     "Enchantment Calc",
+     "Banding material enchant, peluang, dan stat."
+    ],
+    [
+     "Progression Calcs",
+     "Sintesis gem, material rebirth, kalkulator elite."
+    ]
+   ]
+  },
+  {
+   "group": "Upgrade",
+   "items": [
+    [
+     "Levels & Rebirth",
+     "EXP karakter dan syarat Rebirth 1-3."
+    ],
+    [
+     "Elite",
+     "EXP elite, upgrade, cap break, milestone."
+    ],
+    [
+     "Class Skills",
+     "Skill biasa per level dan syarat belajar."
+    ],
+    [
+     "Goddess",
+     "Pilihan goddess, blessing, rank."
+    ],
+    [
+     "Pixie",
+     "Level pixie, biaya, dan stat."
+    ],
+    [
+     "Fragarach Weapon",
+     "Progresi senjata Fragarach."
+    ],
+    [
+     "Wings",
+     "Tahap wing dan material per klik."
+    ],
+    [
+     "Mounts",
+     "Syarat evolusi mount dan biaya."
+    ],
+    [
+     "Soul Development",
+     "Syarat soul dan stat."
+    ],
+    [
+     "Angel/Demon",
+     "Evolusi pet angel dan demon."
+    ],
+    [
+     "Handbook",
+     "Upgrade handbook dan bonus stat."
+    ]
+   ]
+  },
+  {
+   "group": "Dragon & Gem",
+   "items": [
+    [
+     "Dragon Soul",
+     "Syarat level dragon soul dan total stat."
+    ],
+    [
+     "Gems",
+     "Stat gem, resep sintesis, biaya socket."
+    ],
+    [
+     "Guild Lvl/Skills",
+     "Syarat guild dan skill guild."
+    ],
+    [
+     "Sperions",
+     "Level sperion, material, dan stat."
+    ]
+   ]
+  },
+  {
+   "group": "Event",
+   "items": [
+    [
+     "Daily Activities",
+     "Aktivitas harian dan battleground."
+    ],
+    [
+     "Crypt",
+     "Panduan event crypt."
+    ],
+    [
+     "Daily Quiz",
+     "Bank soal dan jawaban quiz."
+    ],
+    [
+     "Crystal Ladder",
+     "Musuh dan reward lantai 1-90+."
+    ],
+    [
+     "Monster Jungle",
+     "Stage monster dan drop."
+    ],
+    [
+     "Dungeons",
+     "Syarat dungeon dan tabel loot."
+    ],
+    [
+     "World Bosses",
+     "Jadwal boss dan reward."
+    ],
+    [
+     "Guild Events",
+     "Boss guild, bonfire, Territory War."
+    ],
+    [
+     "Theme & Timed Events",
+     "Rotasi tema dan reward track."
+    ]
+   ]
+  },
+  {
+   "group": "Informasi",
+   "items": [
+    [
+     "Monsters",
+     "Lokasi monster, EXP, peluang bonfire."
+    ],
+    [
+     "Quest Guide",
+     "Rute quest, prasyarat, reward sampai level 80."
+    ],
+    [
+     "Items, Shops & Currencies",
+     "Sumber item, harga shop, currency."
+    ],
+    [
+     "Honor Ranks",
+     "Threshold honor dan wage harian."
+    ],
+    [
+     "Titles",
+     "Syarat title dan buff."
+    ],
+    [
+     "VIP & Passes",
+     "Threshold VIP dan batas enchant."
+    ]
+   ]
+  }
+ ],
+ "tips": [
+  "Klik nama sistem untuk lompat ke sheet itu.",
+  "Untuk kalkulator, isi sel input yang diberi label.",
+  "Kalau hanya akses view, buat salinan dulu."
+ ]
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSN View — Crystal Saga: Nova</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <span class="gem">◆</span>
+    <div>
+      <h1>CSN View</h1>
+      <p>Crystal Saga: Nova — cari info &amp; susun build</p>
+    </div>
+  </div>
+  <div class="searchbox">
+    <input id="q" type="search" placeholder="Cari item, monster, quest, NPC, shop…  (cth: Fairy Tear)" autocomplete="off">
+    <button id="qbtn">Cari</button>
+  </div>
+  <nav class="topnav">
+    <button data-view="home" class="active">Home</button>
+    <button data-view="calc">Kalkulator</button>
+    <button data-view="build">Panduan Build</button>
+  </nav>
+</header>
+<main class="layout">
+  <aside id="side"></aside>
+  <section id="main"></section>
+</main>
+<div id="detail" class="modal hidden"><div class="card" id="detailCard"></div></div>
+<footer><span>Data dari CSN Systems.xlsx (35 sheet) · UI Bahasa Indonesia · nama game tetap Inggris</span></footer>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+{
+ "categories": {
+  "Kalkulator": [
+   "calcs",
+   "enchantment",
+   "progression"
+  ],
+  "Build Karakter": [
+   "levels",
+   "elite",
+   "skills",
+   "goddess",
+   "pixie",
+   "soul",
+   "dragonsoul",
+   "sperions",
+   "gems",
+   "guild"
+  ],
+  "Upgrade & Koleksi": [
+   "fragarach",
+   "wings",
+   "mounts",
+   "angeldemon",
+   "handbook"
+  ],
+  "Aktivitas & Event": [
+   "daily",
+   "crypt",
+   "quiz",
+   "ladder",
+   "jungle",
+   "dungeons",
+   "worldboss",
+   "guildevents",
+   "theme"
+  ],
+  "Referensi Dunia": [
+   "monsters",
+   "quests",
+   "items",
+   "honor",
+   "titles",
+   "vip",
+   "f2p",
+   "howto"
+  ]
+ },
+ "sheets": [
+  {
+   "sheet": "HowTo",
+   "slug": "howto",
+   "tables": 0,
+   "rows": 0
+  },
+  {
+   "sheet": "Calcs",
+   "slug": "calcs",
+   "tables": 2,
+   "rows": 19
+  },
+  {
+   "sheet": "Enchantment Calc",
+   "slug": "enchantment",
+   "tables": 1,
+   "rows": 3029
+  },
+  {
+   "sheet": "Progression Calcs",
+   "slug": "progression",
+   "tables": 2,
+   "rows": 20
+  },
+  {
+   "sheet": "Levels & Rebirth",
+   "slug": "levels",
+   "tables": 2,
+   "rows": 83
+  },
+  {
+   "sheet": "Elite",
+   "slug": "elite",
+   "tables": 2,
+   "rows": 842
+  },
+  {
+   "sheet": "Class Skills",
+   "slug": "skills",
+   "tables": 1,
+   "rows": 900
+  },
+  {
+   "sheet": "Goddess",
+   "slug": "goddess",
+   "tables": 3,
+   "rows": 222
+  },
+  {
+   "sheet": "Pixie",
+   "slug": "pixie",
+   "tables": 1,
+   "rows": 14
+  },
+  {
+   "sheet": "Fragarach Weapon",
+   "slug": "fragarach",
+   "tables": 1,
+   "rows": 41
+  },
+  {
+   "sheet": "Wings",
+   "slug": "wings",
+   "tables": 1,
+   "rows": 272
+  },
+  {
+   "sheet": "Mounts",
+   "slug": "mounts",
+   "tables": 1,
+   "rows": 14
+  },
+  {
+   "sheet": "Soul Development",
+   "slug": "soul",
+   "tables": 1,
+   "rows": 690
+  },
+  {
+   "sheet": "AngelDemon",
+   "slug": "angeldemon",
+   "tables": 1,
+   "rows": 10
+  },
+  {
+   "sheet": "Handbook",
+   "slug": "handbook",
+   "tables": 1,
+   "rows": 37
+  },
+  {
+   "sheet": "Dragon Soul",
+   "slug": "dragonsoul",
+   "tables": 1,
+   "rows": 120
+  },
+  {
+   "sheet": "Gems",
+   "slug": "gems",
+   "tables": 4,
+   "rows": 150
+  },
+  {
+   "sheet": "Guild LvlSkills",
+   "slug": "guild",
+   "tables": 2,
+   "rows": 85
+  },
+  {
+   "sheet": "Sperions",
+   "slug": "sperions",
+   "tables": 3,
+   "rows": 1604
+  },
+  {
+   "sheet": "Daily Activities",
+   "slug": "daily",
+   "tables": 2,
+   "rows": 43
+  },
+  {
+   "sheet": "Crypt",
+   "slug": "crypt",
+   "tables": 1,
+   "rows": 12
+  },
+  {
+   "sheet": "Daily Quiz",
+   "slug": "quiz",
+   "tables": 1,
+   "rows": 158
+  },
+  {
+   "sheet": "Crystal Ladder",
+   "slug": "ladder",
+   "tables": 2,
+   "rows": 165
+  },
+  {
+   "sheet": "Monster Jungle",
+   "slug": "jungle",
+   "tables": 2,
+   "rows": 35
+  },
+  {
+   "sheet": "Dungeons",
+   "slug": "dungeons",
+   "tables": 2,
+   "rows": 4367
+  },
+  {
+   "sheet": "World Bosses",
+   "slug": "worldboss",
+   "tables": 2,
+   "rows": 605
+  },
+  {
+   "sheet": "Guild Events",
+   "slug": "guildevents",
+   "tables": 2,
+   "rows": 17
+  },
+  {
+   "sheet": "Theme & Timed Events",
+   "slug": "theme",
+   "tables": 3,
+   "rows": 158
+  },
+  {
+   "sheet": "Monsters",
+   "slug": "monsters",
+   "tables": 1,
+   "rows": 1143
+  },
+  {
+   "sheet": "Quest Guide",
+   "slug": "quests",
+   "tables": 1,
+   "rows": 744
+  },
+  {
+   "sheet": "Items, Shops & Currencies",
+   "slug": "items",
+   "tables": 3,
+   "rows": 6621
+  },
+  {
+   "sheet": "Honor Ranks",
+   "slug": "honor",
+   "tables": 1,
+   "rows": 24
+  },
+  {
+   "sheet": "Titles",
+   "slug": "titles",
+   "tables": 2,
+   "rows": 180
+  },
+  {
+   "sheet": "VIP & Passes",
+   "slug": "vip",
+   "tables": 1,
+   "rows": 45
+  },
+  {
+   "sheet": "F2P Achieve",
+   "slug": "f2p",
+   "tables": 1,
+   "rows": 115
+  }
+ ]
+}

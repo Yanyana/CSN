@@ -1,0 +1,19 @@
+# CSN View — konfigurasi deploy Netlify.
+# Cara pakai: hubungkan repo ini ke Netlify (atau drag & drop folder web/).
+# Netlify membaca file ini otomatis: tanpa build command, publish folder web/.
+[build]
+  publish = "web"
+
+# Data JSON boleh di-cache browser 1 jam agar pencarian terasa cepat.
+[[headers]]
+  for = "/data/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+# Header keamanan dasar untuk semua halaman.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "no-referrer"
