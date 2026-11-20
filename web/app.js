@@ -165,18 +165,32 @@ async function boot(){
   });
   await setLang(LANG);
 }
+function sideCollapsed(){
+  try { return JSON.parse(localStorage.getItem("csn-side") || "[]"); } catch (e) { return []; }
+}
 function renderSide(){
+  const shut = new Set(sideCollapsed());
   let h = "";
   for (const [cat, slugs] of Object.entries(manifest.categories)){
     const names = slugs.map(s => {
       const m = manifest.sheets.find(x => x.slug === s);
       return m ? {slug:s, sheet:m.sheet} : null;
     }).filter(Boolean);
-    h += `<h3>${esc(cat)}</h3>` + names.map(n =>
-      `<button data-slug="${n.slug}">📄 ${esc(n.sheet)}</button>`).join("");
+    const closed = shut.has(cat);
+    h += `<button class="cathead${closed ? " closed" : ""}" data-cat="${esc(cat)}"><span>${esc(cat)}</span><span class="arr">▾</span></button>`
+      + `<div class="catgrp${closed ? " hidden" : ""}">` + names.map(n =>
+      `<button data-slug="${n.slug}">📄 ${esc(n.sheet)}</button>`).join("") + `</div>`;
   }
   side.innerHTML = h;
-  side.querySelectorAll("button").forEach(b => b.onclick = () => openSheet(b.dataset.slug, b));
+  side.querySelectorAll("[data-slug]").forEach(b => b.onclick = () => openSheet(b.dataset.slug, b));
+  side.querySelectorAll(".cathead").forEach(b => b.onclick = () => {
+    const grp = b.nextElementSibling;
+    const nowClosed = b.classList.toggle("closed");
+    if (grp) grp.classList.toggle("hidden", nowClosed);
+    const set = new Set(sideCollapsed());
+    if (nowClosed) set.add(b.dataset.cat); else set.delete(b.dataset.cat);
+    try { localStorage.setItem("csn-side", JSON.stringify([...set])); } catch (e) {}
+  });
 }
 function markSide(slug){
   side.querySelectorAll("button").forEach(b => b.classList.toggle("on", b.dataset.slug === slug));
@@ -352,7 +366,7 @@ function renderSheet(d){
     <button class="btn" id="fgo">${esc(t("filterBtn"))}</button>
     <span class="mut small" id="cnt"></span></div>
     <div class="frow" id="facets"></div>
-    <div id="tbl"></div><div class="pager" id="pg"></div></div>`;
+    <div id="tbl" class="tblwrap"></div><div class="pager" id="pg"></div></div>`;
   main.querySelectorAll("[data-ti]").forEach(b => b.onclick = () => { cur.ti = +b.dataset.ti; cur.page = 0; cur.colf = {}; cur.f = ""; renderSheet(d); });
   const go = () => { cur.f = $("#ff").value.toLowerCase(); cur.page = 0; drawTbl(d); };
   $("#fgo").onclick = go;
