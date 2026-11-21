@@ -29,6 +29,10 @@ id: {
   filterPh: "Filter teks…", filterBtn: "Filter", rowsW: "baris", pageW: "Halaman",
   alsoW: "Lihat juga:", allW: "semua", devTime: "jam perangkat",
   foot: "Data dari CSN Systems.xlsx (35 sheet) · UI Bahasa Indonesia · nama game tetap Inggris",
+  catCalc: "Kalkulator", catBuild: "Build Karakter", catUp: "Upgrade & Koleksi",
+  catAct: "Aktivitas & Event", catRef: "Referensi Dunia",
+  tagRow: "baris", tagGuide: "panduan", tagCalc: "kalkulator", colW: "Kolom", sheetsW: "sheet",
+  mountOut: "Level {lv}: total PC {pc} (PC/klik {ppc})",
   cPOI_h: "Kalkulator POI / CP", cR: "Recharged (USD → ×100 sen)",
   cShopPOI: "Belanja POI", cShopCP: "Belanja CP",
   cHonor_h: "Kalkulator Honor", cHonor_p: "Ubah attempts per event, total = honor × attempts. Data dari sheet Calcs.",
@@ -73,6 +77,10 @@ en: {
   filterPh: "Filter text…", filterBtn: "Filter", rowsW: "rows", pageW: "Page",
   alsoW: "See also:", allW: "all", devTime: "device time",
   foot: "Data from CSN Systems.xlsx (35 sheets) · English UI · game names stay in English",
+  catCalc: "Calculators", catBuild: "Character Builds", catUp: "Upgrades & Collections",
+  catAct: "Activities & Events", catRef: "World Reference",
+  tagRow: "row", tagGuide: "guide", tagCalc: "calculator", colW: "Column", sheetsW: "sheets",
+  mountOut: "Level {lv}: total PC {pc} (PC/click {ppc})",
   cPOI_h: "POI / CP Calculator", cR: "Recharged (USD → ×100 cents)",
   cShopPOI: "POI shopping", cShopCP: "CP shopping",
   cHonor_h: "Honor Calculator", cHonor_p: "Edit attempts per event, total = honor × attempts. Data from the Calcs sheet.",
@@ -132,6 +140,8 @@ async function setLang(l){
   LANG = (l === "en") ? "en" : "id";
   try { localStorage.setItem("csn-lang", LANG); } catch (e) {}
   paintChrome();
+  renderSide();
+  if (cur.view === "sheet" && cur.slug) markSide(cur.slug);
   await renderCurrent();
 }
 
@@ -177,7 +187,8 @@ function renderSide(){
       return m ? {slug:s, sheet:m.sheet} : null;
     }).filter(Boolean);
     const closed = shut.has(cat);
-    h += `<button class="cathead${closed ? " closed" : ""}" data-cat="${esc(cat)}"><span>${esc(cat)}</span><span class="arr">▾</span></button>`
+    const label = { "Kalkulator": t("catCalc"), "Build Karakter": t("catBuild"), "Upgrade & Koleksi": t("catUp"), "Aktivitas & Event": t("catAct"), "Referensi Dunia": t("catRef") }[cat] || cat;
+    h += `<button class="cathead${closed ? " closed" : ""}" data-cat="${esc(cat)}"><span>${esc(label)}</span><span class="arr">▾</span></button>`
       + `<div class="catgrp${closed ? " hidden" : ""}">` + names.map(n =>
       `<button data-slug="${n.slug}">📄 ${esc(n.sheet)}</button>`).join("") + `</div>`;
   }
@@ -213,7 +224,7 @@ function goHome(){
   const cg = $("#cats");
   cg.innerHTML = Object.entries(manifest.categories).map(([c, slugs]) => `
     <div class="panel"><h2>${esc(c)}</h2>
-      <p class="mut small">${slugs.length} sheet</p>
+      <p class="mut small">${slugs.length} ${esc(t("sheetsW"))}</p>
       ${slugs.map(s => {
         const m = manifest.sheets.find(x => x.slug === s);
         return `<button class="btn" style="margin:2px" onclick="openSheet('${s}')">${esc(m ? m.sheet : s)}</button>`;
@@ -326,10 +337,11 @@ function relatedBtns(slug){
 function showDetail(o){
   const cells = o.cells || [];
   const heads = o.headers || [];
+  const tagName = { "baris": t("tagRow"), "panduan": t("tagGuide"), "kalkulator": t("tagCalc") }[o.tag] || o.tag || "";
   $("#detailCard").innerHTML = `
     <h2>${esc(o.sheet)}</h2>
-    <p class="mut small">${esc(o.title || "")} · <span class="tag">${esc(o.tag || "")}</span></p>
-    <div class="kv">${cells.map((c, i) => `<b>${esc(heads[i] || ("Kolom " + (i + 1)))}</b><span>${para(c)}</span>`).join("")}</div>
+    <p class="mut small">${esc(o.title || "")} · <span class="tag">${esc(tagName)}</span></p>
+    <div class="kv">${cells.map((c, i) => `<b>${esc(heads[i] || (t("colW") + " " + (i + 1)))}</b><span>${para(c)}</span>`).join("")}</div>
     <div class="frow" style="margin-top:12px">
       <button class="btn pri" id="x1">${esc(t("x1"))}</button>
       <button class="btn" onclick="document.querySelector('#detail').classList.add('hidden')">${esc(t("closeBtn"))}</button>
@@ -515,7 +527,7 @@ window.goCalc = async function(){
   const mupd = () => {
     const lv = Math.min(20, Math.max(1, +$("#c_m").value || 1));
     const row = c.mount.rows.find(r => String(r[0]) === String(lv));
-    $("#c_mout").innerHTML = row ? `Level ${lv}: total PC <b>${esc(row[1])}</b> (PC/klik ${esc(row[2])})` : "—";
+    $("#c_mout").innerHTML = row ? esc(t("mountOut")).replace("{lv}", lv).replace("{pc}", "<b>" + esc(row[1]) + "</b>").replace("{ppc}", esc(row[2])) : "—";
   };
   $("#c_m").oninput = mupd; mupd();
   $("#c_mtbl").innerHTML = tbl(c.mount.headers, c.mount.rows.filter(r => r[0] && !/mount level/i.test(r[0])));
